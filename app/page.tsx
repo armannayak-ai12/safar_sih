@@ -286,7 +286,7 @@ export default function Home() {
             <Link href={authHref} className="safar-signin-link">
               {isLoggedIn ? "Dashboard" : "Sign In"}
             </Link>
-            <Link href="/register" className="safar-getstarted-btn">
+            <Link href="/login" className="safar-getstarted-btn">
               Get Started
             </Link>
             <button
@@ -742,7 +742,7 @@ export default function Home() {
               <h5>Contact &amp; Legal</h5>
               <ul>
                 <li><Link href="/login">Sign In</Link></li>
-                <li><Link href="/register">Register</Link></li>
+                <li><Link href="/login">Get Started</Link></li>
                 <li><a href="#why">Privacy &amp; Safety</a></li>
                 <li><a href="mailto:support@safar.in">support@safar.in</a></li>
               </ul>

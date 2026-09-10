@@ -1509,3 +1509,14 @@ body {
   }
 }
 
+/* ====================================================
+   SAFAR DASHBOARD CANVAS HARMONIZATION
+   ==================================================== */
+div:has(> main > .dashboard-canvas) {
+  background-color: var(--safar-bg);
+}
+
+.dashboard-canvas {
+  color: var(--safar-text);
+}
+
