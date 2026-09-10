@@ -1,14 +1,21 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String   @id // Matches the Supabase auth.users UUID
   email     String   @unique
   name      String?
+  avatarUrl String?
+  
+  // Example of a relation you might add later:
+  // trips    Trip[]
+  
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
