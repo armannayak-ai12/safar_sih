@@ -18,7 +18,6 @@ export const config = {
   matcher: [
     "/suggestor/:path*",
     "/fair-fare/:path*",
-    "/partner-finder/:path*",
     "/trip/:path*",
   ],
 };

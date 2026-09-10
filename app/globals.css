@@ -1039,6 +1039,16 @@ body {
   box-shadow: 0 12px 28px rgba(16, 35, 28, 0.06);
 }
 
+a.safar-why-benefit-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.safar-why-benefit-card:hover {
+  border-color: rgba(232, 91, 42, 0.35);
+}
+
 .safar-benefit-badge-icon {
   width: 36px;
   height: 36px;
@@ -1505,4 +1515,926 @@ body {
     text-align: center;
   }
 }
+
+/* ====================================================
+   PLACEHOLDER PAGE STYLES (e.g. /partner-finder)
+   ==================================================== */
+.safar-placeholder-page {
+  min-height: 100vh;
+  background-color: var(--safar-bg);
+  display: flex;
+  flex-direction: column;
+  color: var(--safar-text);
+}
+
+.safar-placeholder-nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid var(--safar-border);
+  background: transparent;
+}
+
+.safar-placeholder-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--safar-text);
+}
+
+.safar-placeholder-brand-logo {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.safar-placeholder-brand-name {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--safar-text);
+}
+
+.safar-placeholder-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--safar-text-muted);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.safar-placeholder-back-link:hover {
+  color: var(--safar-orange);
+  transform: translateX(-3px);
+}
+
+.safar-placeholder-body {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+}
+
+.safar-placeholder-card {
+  width: min(100%, 640px);
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 24px;
+  padding: 56px 44px;
+  text-align: center;
+  box-shadow: 0 16px 45px rgba(16, 35, 28, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.safar-placeholder-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--safar-orange), #ff9d66);
+}
+
+.safar-placeholder-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--safar-orange);
+  background: rgba(232, 91, 42, 0.08);
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(232, 91, 42, 0.2);
+}
+
+.safar-pulse-dot-orange {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--safar-orange);
+  box-shadow: 0 0 0 3px rgba(232, 91, 42, 0.25);
+  animation: pulseDot 2s infinite;
+}
+
+.safar-placeholder-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(232, 91, 42, 0.08);
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  margin-top: 4px;
+}
+
+.safar-placeholder-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--safar-text);
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.safar-placeholder-subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--safar-text);
+  margin: 0;
+}
+
+.safar-placeholder-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--safar-text-muted);
+  max-width: 480px;
+  margin: 4px 0 12px;
+}
+
+.safar-placeholder-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.safar-placeholder-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--safar-orange);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 13px 28px;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 6px 20px rgba(232, 91, 42, 0.35);
+}
+
+.safar-placeholder-btn-primary:hover {
+  background: var(--safar-orange-hover);
+  transform: translateY(-2px);
+}
+
+.safar-placeholder-footer {
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 0.78rem;
+  color: #7b8881;
+}
+
+@media (max-width: 640px) {
+  .safar-placeholder-nav {
+    padding: 0 20px;
+    height: 68px;
+  }
+  .safar-placeholder-card {
+    padding: 36px 20px;
+  }
+  .safar-placeholder-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .safar-placeholder-btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ====================================================
+   PLANNER PAGE STYLES (/suggestor)
+   Production-Grade Travel Platform Styling
+   ==================================================== */
+.safar-planner-page {
+  min-height: 100vh;
+  background-color: var(--safar-bg);
+  display: flex;
+  flex-direction: column;
+  color: var(--safar-text);
+}
+
+.safar-planner-nav {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.safar-planner-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.safar-planner-brand-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(16, 35, 28, 0.12);
+}
+
+.safar-planner-brand-name {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--safar-text);
+}
+
+.safar-planner-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--safar-text-muted);
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--safar-border);
+  background: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.safar-planner-back-link:hover {
+  color: var(--safar-text);
+  border-color: #beb6a8;
+  background: #fdfbf7;
+}
+
+.safar-planner-hero {
+  text-align: center;
+  padding: 12px 20px 28px;
+}
+
+.safar-planner-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--safar-orange);
+  margin-bottom: 8px;
+}
+
+.safar-planner-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--safar-text);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.safar-planner-subheading {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--safar-text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.safar-planner-main {
+  flex: 1;
+  padding: 0 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.safar-planner-form-card {
+  width: 100%;
+  max-width: 740px;
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(16, 35, 28, 0.04);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.safar-planner-card-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--safar-orange);
+}
+
+.safar-planner-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.safar-planner-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.safar-planner-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--safar-text);
+  letter-spacing: -0.01em;
+}
+
+.safar-planner-label-hint {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #7b8881;
+}
+
+/* Live Location Bar */
+.safar-planner-location-box {
+  background: #fbf9f5;
+  border: 1px solid var(--safar-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.safar-planner-location-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.safar-planner-location-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--safar-text);
+}
+
+.safar-planner-location-btn {
+  background: none;
+  border: none;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--safar-orange);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.safar-planner-location-btn:hover {
+  color: var(--safar-orange-hover);
+}
+
+.safar-planner-location-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--safar-text-muted);
+}
+
+.safar-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.safar-status-dot-active {
+  background: #2e7d32;
+}
+
+.safar-status-dot-pulse {
+  background: var(--safar-orange);
+  animation: safarPulse 1.4s infinite;
+}
+
+.safar-status-dot-idle {
+  background: #9aa8a1;
+}
+
+@keyframes safarPulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.6; }
+}
+
+/* Inputs */
+.safar-planner-input-wrap {
+  position: relative;
+}
+
+.safar-planner-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7b8881;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.safar-planner-input {
+  width: 100%;
+  background: #fdfcf9;
+  border: 1px solid var(--safar-border);
+  border-radius: 10px;
+  padding: 12px 16px 12px 42px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--safar-text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.safar-planner-input:focus {
+  background: #ffffff;
+  border-color: var(--safar-orange);
+  box-shadow: 0 0 0 3px rgba(232, 91, 42, 0.12);
+}
+
+.safar-planner-input.input-error {
+  border-color: #d32f2f;
+  background: #fffafa;
+}
+
+.safar-planner-currency-symbol {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--safar-orange);
+  pointer-events: none;
+}
+
+.safar-planner-currency-input {
+  padding-left: 36px;
+}
+
+.safar-planner-field-error {
+  font-size: 0.78rem;
+  color: #c62828;
+  font-weight: 500;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Duration Selector */
+.safar-planner-duration-group {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.safar-planner-duration-pill {
+  padding: 11px 6px;
+  border-radius: 9px;
+  border: 1px solid var(--safar-border);
+  background: #ffffff;
+  color: var(--safar-text);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.safar-planner-duration-pill:hover {
+  border-color: #beb6a8;
+  background: #fdfbf7;
+}
+
+.safar-planner-duration-pill.is-active {
+  background: #fff8f5;
+  border-color: var(--safar-orange);
+  color: var(--safar-orange);
+  font-weight: 700;
+}
+
+/* Interests Filter Chips (No Emojis) */
+.safar-planner-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.safar-planner-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--safar-border);
+  background: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--safar-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.safar-planner-chip:hover {
+  border-color: #b8af9f;
+  background: #fbf9f5;
+}
+
+.safar-planner-chip.is-active {
+  background: var(--safar-text);
+  border-color: var(--safar-text);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 3-Column Radio Card Options */
+.safar-planner-card-options-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.safar-planner-option-card {
+  padding: 14px 14px;
+  border-radius: 11px;
+  border: 1px solid var(--safar-border);
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.safar-planner-option-card:hover {
+  border-color: #beb6a8;
+  background: #fdfbf7;
+}
+
+.safar-planner-option-card.is-active {
+  border-color: var(--safar-orange);
+  background: #fff9f6;
+}
+
+.safar-planner-option-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.safar-radio-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #b8af9f;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.safar-radio-circle.is-checked {
+  border-color: var(--safar-orange);
+}
+
+.safar-radio-circle.is-checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--safar-orange);
+}
+
+.safar-planner-option-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--safar-text);
+}
+
+.safar-planner-option-card.is-active .safar-planner-option-title {
+  color: var(--safar-orange);
+}
+
+.safar-planner-option-desc {
+  font-size: 0.74rem;
+  color: var(--safar-text-muted);
+  line-height: 1.35;
+  padding-left: 22px;
+}
+
+/* Error Box */
+.safar-planner-error-box {
+  background: #fef5f4;
+  border: 1px solid #f6cfc9;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.84rem;
+  color: #c62828;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Primary CTA Button */
+.safar-planner-cta-btn {
+  width: 100%;
+  background: var(--safar-orange);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 15px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(232, 91, 42, 0.25);
+  transition: all 0.15s ease;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.safar-planner-cta-btn:hover {
+  background: var(--safar-orange-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 91, 42, 0.32);
+}
+
+.safar-planner-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Confirmation State */
+.safar-planner-confirm-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.safar-planner-confirm-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #eef7f2;
+  color: #278351;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c8e8d5;
+}
+
+.safar-planner-confirm-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: var(--safar-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.safar-planner-confirm-subheading {
+  font-size: 0.98rem;
+  color: var(--safar-text-muted);
+  max-width: 480px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.safar-planner-summary-card {
+  width: 100%;
+  background: #fcfbfa;
+  border: 1px solid var(--safar-border);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.safar-planner-summary-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.safar-planner-summary-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--safar-text-muted);
+}
+
+.safar-planner-summary-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--safar-orange);
+  background: #fff3ee;
+  border: 1px solid rgba(232, 91, 42, 0.25);
+  border-radius: 99px;
+  padding: 3px 10px;
+}
+
+.safar-planner-summary-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.safar-summary-route-node {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.safar-summary-route-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #7b8881;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.safar-summary-route-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--safar-text);
+}
+
+.safar-planner-summary-route-arrow {
+  color: var(--safar-orange);
+  display: flex;
+  align-items: center;
+}
+
+.safar-planner-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-planner-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.safar-planner-summary-item-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7b8881;
+  text-transform: uppercase;
+}
+
+.safar-planner-summary-item-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--safar-text);
+}
+
+.safar-planner-summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.safar-planner-summary-chip {
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--safar-text);
+}
+
+.safar-planner-confirm-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.safar-planner-btn-secondary {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 10px;
+  padding: 13px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--safar-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.safar-planner-btn-secondary:hover {
+  border-color: #b8af9f;
+  background: #fcfbfa;
+}
+
+.safar-planner-btn-back {
+  flex: 1;
+  background: var(--safar-text);
+  border-radius: 10px;
+  padding: 13px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.safar-planner-btn-back:hover {
+  background: #19362b;
+}
+
+.safar-planner-footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.76rem;
+  color: #7b8881;
+}
+
+@media (max-width: 640px) {
+  .safar-planner-nav {
+    padding: 0 20px;
+    height: 64px;
+  }
+  .safar-planner-form-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .safar-planner-duration-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .safar-planner-card-options-3col {
+    grid-template-columns: 1fr;
+  }
+  .safar-planner-summary-route {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .safar-planner-summary-route-arrow {
+    transform: rotate(90deg);
+  }
+  .safar-planner-confirm-actions {
+    flex-direction: column;
+  }
+}
+
+
+
 

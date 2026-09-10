@@ -95,8 +95,10 @@ const destinations = [
     tag: "FEATURED DESTINATION",
     title: "Udaipur, Rajasthan",
     desc: "Lakes, Mewar heritage & tranquil waters",
+    desc: "Lakes, palaces & slow evenings",
     badge: "✓ Verified partner matches",
     image: "/safar-jaipur-hero.png",
+    image: "/safar-udaipur.jpg",
   },
   {
     num: "03",
@@ -105,6 +107,10 @@ const destinations = [
     desc: "Ancient ghats, evening Aarti & silk traditions",
     badge: "✓ Fair fare guidance",
     image: "/safar-jaipur-hero.png",
+    title: "Rishikesh, Uttarakhand",
+    desc: "Rivers, mountains & adventure",
+    badge: "✓ Mountain route safety",
+    image: "/safar-rishikesh.jpg",
   },
   {
     num: "04",
@@ -113,6 +119,10 @@ const destinations = [
     desc: "Snow peaks, cedar valleys & quiet mountain trails",
     badge: "✓ Ride safety monitoring",
     image: "/safar-jaipur-hero.png",
+    title: "Jaisalmer, Rajasthan",
+    desc: "Golden sands & desert nights",
+    badge: "✓ Desert safari guidance",
+    image: "/safar-jaisalmer.jpg",
   },
 ];
 
@@ -205,6 +215,7 @@ export default function Home() {
             <Image
               src={currentDest.image}
               alt="Jaipur Rajasthan at sunset with Hawa Mahal"
+              alt={currentDest.title}
               fill
               priority
               sizes="(max-width: 900px) 100vw, 60vw"
@@ -427,11 +438,11 @@ export default function Home() {
               <p>Fare guidance</p>
             </div>
 
-            <div className="safar-why-benefit-card">
+            <Link href="/partner-finder" className="safar-why-benefit-card">
               <div className="safar-benefit-badge-icon">🤝</div>
               <h4>GO TOGETHER</h4>
               <p>Shared travel</p>
-            </div>
+            </Link>
 
             <div className="safar-why-benefit-card">
               <div className="safar-benefit-badge-icon">🛡️</div>
@@ -594,6 +605,7 @@ export default function Home() {
             <div className="safar-dest-photo-card">
               <Image
                 src="/safar-jaipur-hero.png"
+                src="/safar-udaipur.jpg"
                 alt="Udaipur, Rajasthan"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -604,12 +616,14 @@ export default function Home() {
               <div className="safar-dest-card-content">
                 <h3>Udaipur</h3>
                 <p>Lakes, Mewar heritage &amp; tranquil waters</p>
+                <p>Lakes, palaces &amp; slow evenings</p>
               </div>
             </div>
 
             <div className="safar-dest-photo-card">
               <Image
                 src="/safar-jaipur-hero.png"
+                src="/safar-rishikesh.jpg"
                 alt="Rishikesh, Uttarakhand"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -620,6 +634,7 @@ export default function Home() {
               <div className="safar-dest-card-content">
                 <h3>Rishikesh</h3>
                 <p>Himalayan foothills &amp; peaceful river trails</p>
+                <p>Rivers, mountains &amp; adventure</p>
               </div>
             </div>
 
@@ -627,6 +642,8 @@ export default function Home() {
               <Image
                 src="/safar-jaipur-hero.png"
                 alt="Varanasi, Uttar Pradesh"
+                src="/safar-jaisalmer.jpg"
+                alt="Jaisalmer, Rajasthan"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="safar-dest-bg-img"
@@ -636,6 +653,8 @@ export default function Home() {
               <div className="safar-dest-card-content">
                 <h3>Varanasi</h3>
                 <p>Ancient ghats, evening Aarti &amp; silk traditions</p>
+                <h3>Jaisalmer</h3>
+                <p>Golden sands &amp; desert nights</p>
               </div>
             </div>
           </div>
