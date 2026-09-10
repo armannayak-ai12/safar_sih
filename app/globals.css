@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --safar-bg: #f8f4ec;
@@ -11,6 +12,8 @@
   --safar-border: #e8e2d5;
   --font-serif: "Playfair Display", "Didot", "Bodoni MT", "Iowan Old Style", "Baskerville", "Palatino", Georgia, serif;
 }
+
+.dark { --safar-bg: #10231c; --safar-text: #f8f4ec; --safar-text-muted: #9db0a6; --safar-neutral: #1c342a; --safar-neutral-light: #16281f; --safar-border: #274539;}
 
 * {
   box-sizing: border-box;
