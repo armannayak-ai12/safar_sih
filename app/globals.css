@@ -940,3 +940,569 @@ body {
     font-size: 0.76rem;
   }
 }
+
+/* ====================================================
+   STREAMLINED LANDING PAGE STYLES (SECTIONS 2 - 8)
+   ==================================================== */
+.safar-landing-page {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  background-color: var(--safar-bg);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.safar-section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+}
+
+.safar-section-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--safar-orange);
+  margin-bottom: 12px;
+}
+
+.safar-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--safar-text);
+  margin: 0 0 14px 0;
+  letter-spacing: -0.025em;
+}
+
+.safar-section-lead {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--safar-text-muted);
+  max-width: 600px;
+  margin: 0 0 44px 0;
+}
+
+/* --- SECTION 2: WHY SAFAR (COMPACT CORE VALUE) --- */
+.safar-section-why {
+  padding: 72px 0 64px;
+  background-color: #fbf9f5;
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-why-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.safar-why-intro {
+  max-width: 600px;
+}
+
+.safar-why-intro .safar-section-title {
+  margin-bottom: 8px;
+}
+
+.safar-why-intro .safar-section-lead {
+  margin-bottom: 0;
+}
+
+.safar-why-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.safar-why-benefit-card {
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 18px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(16, 35, 28, 0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.safar-why-benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 35, 28, 0.06);
+}
+
+.safar-benefit-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(232, 91, 42, 0.1);
+  color: var(--safar-orange);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.safar-why-benefit-card h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--safar-text);
+}
+
+.safar-why-benefit-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--safar-text-muted);
+  font-weight: 500;
+}
+
+/* --- SECTION 3: CORE FEATURES --- */
+.safar-section-features {
+  padding: 84px 0 76px;
+  background-color: var(--safar-bg);
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.safar-feature-card {
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 20px;
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(16, 35, 28, 0.03);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.safar-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(16, 35, 28, 0.07);
+  border-color: rgba(232, 91, 42, 0.3);
+}
+
+.safar-feature-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.safar-feature-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(232, 91, 42, 0.08);
+  color: var(--safar-orange);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.safar-feature-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--safar-text);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.015em;
+}
+
+.safar-feature-info p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--safar-text-muted);
+}
+
+.safar-feature-action {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--safar-neutral);
+}
+
+.safar-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--safar-orange);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.safar-feature-link:hover {
+  gap: 10px;
+}
+
+/* --- SECTION 4: HOW IT WORKS (SIMPLE TIMELINE) --- */
+.safar-section-how {
+  padding: 84px 0 76px;
+  background-color: #f6f1e8;
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-how-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  position: relative;
+}
+
+.safar-how-step-card {
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 18px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(16, 35, 28, 0.03);
+}
+
+.safar-how-step-num {
+  font-size: 1.8rem;
+  font-family: var(--font-serif);
+  font-weight: 800;
+  color: var(--safar-orange);
+  line-height: 1;
+}
+
+.safar-how-step-card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--safar-text);
+}
+
+.safar-how-step-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--safar-text-muted);
+}
+
+/* --- SECTION 5: DESTINATIONS / DISCOVER --- */
+.safar-section-destinations {
+  padding: 88px 0 80px;
+  background-color: var(--safar-bg);
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.safar-dest-photo-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 360px;
+  box-shadow: 0 12px 32px rgba(16, 35, 28, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.safar-dest-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(16, 35, 28, 0.16);
+}
+
+.safar-dest-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.safar-dest-photo-card:hover .safar-dest-bg-img {
+  transform: scale(1.04);
+}
+
+.safar-dest-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 35, 28, 0.08) 0%,
+    rgba(16, 35, 28, 0.35) 45%,
+    rgba(16, 35, 28, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.safar-dest-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.safar-dest-card-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.safar-dest-card-content p {
+  font-size: 0.84rem;
+  color: #e5ece8;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* --- SECTION 6: IMPACT (COMPACT VALUE SECTION) --- */
+.safar-section-impact {
+  padding: 72px 0 68px;
+  background-color: #f7f3ec;
+  border-top: 1px solid var(--safar-border);
+}
+
+.safar-impact-ribbon {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.safar-impact-item {
+  background: #ffffff;
+  border: 1px solid var(--safar-border);
+  border-radius: 16px;
+  padding: 22px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(16, 35, 28, 0.03);
+}
+
+.safar-impact-icon {
+  font-size: 1.5rem;
+}
+
+.safar-impact-item span:last-child {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--safar-text);
+  letter-spacing: -0.01em;
+}
+
+/* --- SECTION 7: FINAL CTA (CLEAN & STRONG) --- */
+.safar-section-cta {
+  padding: 96px 0;
+  background: linear-gradient(135deg, #10231c 0%, #1a382c 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.safar-cta-box {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.safar-cta-box h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.safar-cta-box p {
+  font-size: 1.08rem;
+  color: #cbd8d1;
+  margin: 0;
+}
+
+.safar-btn-cta-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--safar-orange);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 15px 34px;
+  border-radius: 99px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 8px 28px rgba(232, 91, 42, 0.4);
+}
+
+.safar-btn-cta-main:hover {
+  background: var(--safar-orange-hover);
+  transform: translateY(-2px);
+}
+
+/* --- SECTION 8: MINIMAL FOOTER --- */
+.safar-footer-minimal {
+  background-color: #0b1713;
+  color: #9cb1a6;
+  padding: 56px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.safar-footer-row {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.safar-footer-brand h4 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.safar-footer-brand p {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #7b9487;
+  margin: 0;
+  max-width: 280px;
+}
+
+.safar-footer-links h5 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+}
+
+.safar-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.safar-footer-links a {
+  text-decoration: none;
+  font-size: 0.84rem;
+  color: #9cb1a6;
+  transition: color 0.2s;
+}
+
+.safar-footer-links a:hover {
+  color: var(--safar-orange);
+}
+
+.safar-footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  font-size: 0.76rem;
+  color: #6a8276;
+}
+
+/* ====================================================
+   RESPONSIVE LAYOUT FOR SECTIONS 2 - 8
+   ==================================================== */
+@media (max-width: 1024px) {
+  .safar-section-container {
+    padding: 0 32px;
+  }
+  .safar-why-benefits-grid,
+  .safar-how-timeline,
+  .safar-destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .safar-impact-ribbon {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .safar-footer-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .safar-section-container {
+    padding: 0 20px;
+  }
+  .safar-section-why,
+  .safar-section-features,
+  .safar-section-how,
+  .safar-section-destinations,
+  .safar-section-impact,
+  .safar-section-cta {
+    padding: 56px 0;
+  }
+  .safar-why-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .safar-why-benefits-grid,
+  .safar-features-grid,
+  .safar-how-timeline,
+  .safar-destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  .safar-dest-photo-card {
+    height: 280px;
+  }
+  .safar-impact-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .safar-footer-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .safar-footer-bottom-bar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
