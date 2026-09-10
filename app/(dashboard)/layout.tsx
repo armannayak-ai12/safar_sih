@@ -1,6 +1,9 @@
+// app/(dashboard)/layout.tsx
+
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import Navbar from "@/components/navbar"; // Adjust path to where you saved it
+import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -8,7 +11,6 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   if (error || !user) redirect("/login");
 
-  // Construct the user object to pass into your Navbar
   const navUser = {
     email: user.email,
     name: user.user_metadata?.full_name,
@@ -16,11 +18,18 @@ export default async function DashboardLayout({ children }: { children: React.Re
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col transition-colors">
-      <Navbar user={navUser} />
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
-        {children}
-      </main>
-    </div>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col transition-colors">
+        <Navbar user={navUser} />
+        <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+          {children}
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
