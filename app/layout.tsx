@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SAFAR — Smart, Affordable & Fair Assistance for Travelers",
-  description: "AI-powered tourist assistance platform that helps travelers verify fair transportation fares, discover destinations within their budget, find compatible travel partners, and stay safe during a ride.",
+  title: "SAFAR — Travel India, your way",
+  description: "Plan smarter, pay fair, go together, and stay safe with SAFAR — India’s smart travel companion.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,36 +1,942 @@
 @import "tailwindcss";
 
-:root { --safar-ink: #1e1d1a; --safar-paper: #f8f4eb; --safar-orange: #e9642b; --safar-sun: #f3ad3d; }
-
-* { box-sizing: border-box; }
-
-body { margin: 0; }
-
-.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 28px; color: var(--safar-ink); background: #f7f5f0; font-family: Arial, Helvetica, sans-serif; }
-.auth-panel { width: min(100%, 440px); padding: 42px; border: 1px solid #e4e0d8; border-radius: 20px; background: #fffefa; box-shadow: 0 18px 50px #382f2110; }.auth-brand { display: flex; align-items: center; gap: 10px; color: var(--safar-ink); text-decoration: none; font-size: 1.15rem; font-weight: 800; letter-spacing: -.07em; }.auth-brand img { width: 42px; height: 42px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 10px #2d28231c; }.auth-copy { margin: 76px 0 34px; }.auth-kicker { margin: 0 0 15px; color: #8a8176; font-size: .66rem; font-weight: 800; letter-spacing: .15em; }.auth-copy h1 { margin: 0; font-size: clamp(2.8rem, 10vw, 3.8rem); line-height: .94; letter-spacing: -.08em; }.auth-copy h1 em { font-family: Georgia, serif; font-weight: 400; }.auth-copy>p:last-child { margin: 20px 0 0; color: #746f67; font-size: .91rem; line-height: 1.55; }.google-button { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 53px; border: 1px solid #d7d2c9; border-radius: 11px; color: #312f2b; background: #fff; font: 700 .86rem Arial, Helvetica, sans-serif; cursor: pointer; transition: transform .2s, box-shadow .2s; }.google-button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px #302a2217; }.google-button svg { width: 19px; height: 19px; }.auth-terms { margin: 23px 0 0; color: #928c83; font-size: .65rem; line-height: 1.6; }.auth-terms a { color: #5d554c; text-underline-offset: 2px; }
-@media (max-width: 460px) { .auth-page { padding: 16px; }.auth-panel { padding: 30px 25px; border-radius: 16px; }.auth-copy { margin: 58px 0 30px; } }
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --safar-bg: #f8f4ec;
+  --safar-text: #10231c;
+  --safar-text-muted: #52635a;
+  --safar-orange: #e85b2a;
+  --safar-orange-hover: #d14d1e;
+  --safar-neutral: #eee9df;
+  --safar-neutral-light: #fbf9f4;
+  --safar-border: #e8e2d5;
+  --font-serif: "Playfair Display", "Didot", "Bodoni MT", "Iowan Old Style", "Baskerville", "Palatino", Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--safar-text);
+  background-color: var(--safar-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ====================================================
+   AUTH PAGE STYLES (Preserved)
+   ==================================================== */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: var(--safar-text);
+  background: var(--safar-bg);
+}
+.auth-panel {
+  width: min(100%, 440px);
+  padding: 42px;
+  border: 1px solid var(--safar-border);
+  border-radius: 20px;
+  background: #fffefa;
+  box-shadow: 0 18px 50px rgba(56, 47, 33, 0.06);
+}
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--safar-text);
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.auth-brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(45, 40, 35, 0.11);
+}
+.auth-copy {
+  margin: 64px 0 32px;
+}
+.auth-kicker {
+  margin: 0 0 12px;
+  color: #8a8176;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+.auth-copy h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+.auth-copy h1 em {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+.auth-copy > p:last-child {
+  margin: 18px 0 0;
+  color: #6a665d;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #d7d2c9;
+  border-radius: 12px;
+  color: #2b2926;
+  background: #fff;
+  font: 700 0.88rem inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.google-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(48, 42, 34, 0.09);
+}
+.google-button svg {
+  width: 19px;
+  height: 19px;
+}
+.auth-terms {
+  margin: 22px 0 0;
+  color: #928c83;
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+.auth-terms a {
+  color: #5d554c;
+  text-underline-offset: 2px;
+}
+
+/* ====================================================
+   UNIFIED SINGLE HERO COMPOSITION
+   ==================================================== */
+.safar-unified-hero {
+  position: relative;
+  background-color: var(--safar-bg);
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- Integrated Navbar (NO dividing line or separate background) --- */
+.safar-hero-nav {
+  position: relative;
+  z-index: 30;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: transparent;
+}
+
+.safar-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.safar-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--safar-text);
+}
+
+.safar-nav-brand-logo {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.safar-nav-brand-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--safar-text);
+}
+
+.safar-nav-tagline {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7b8881;
+  padding-left: 12px;
+  border-left: 1px solid #ddd6c8;
+}
+
+.safar-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.safar-nav-center a {
+  text-decoration: none;
+  color: var(--safar-text-muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  letter-spacing: -0.01em;
+}
+
+.safar-nav-center a:hover {
+  color: var(--safar-orange);
+}
+
+.safar-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.safar-theme-toggle {
+  background: transparent;
+  border: 1px solid var(--safar-neutral);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--safar-text);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.safar-theme-toggle:hover {
+  background: var(--safar-neutral);
+}
+
+.safar-signin-link {
+  text-decoration: none;
+  color: var(--safar-text);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 99px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.safar-signin-link:hover {
+  color: var(--safar-orange);
+  background: rgba(232, 91, 42, 0.06);
+}
+
+.safar-getstarted-btn {
+  text-decoration: none;
+  background: var(--safar-text);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 99px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.safar-getstarted-btn:hover {
+  background: var(--safar-orange);
+  transform: translateY(-1px);
+}
+
+.safar-nav-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--safar-border);
+  border-radius: 8px;
+  padding: 7px;
+  color: var(--safar-text);
+  cursor: pointer;
+}
+
+/* --- Hero Body (One continuous canvas) --- */
+.safar-hero-body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 84px);
+}
+
+/* ====================================================
+   JAIPUR PHOTOGRAPH VISUAL LAYER
+   Merged seamlessly into cream canvas (right ~58%)
+   ==================================================== */
+.safar-hero-photo-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* The photo itself with mask for 100% invisible edge transition */
+.safar-hero-photo-inner {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.08) 8%, rgba(0,0,0,0.5) 24%, black 50%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.08) 8%, rgba(0,0,0,0.5) 24%, black 50%);
+}
+
+.safar-hero-photo-img {
+  object-fit: cover;
+  object-position: center 25%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Soft cream horizontal blend overlay */
+.safar-hero-photo-cream-blend {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #f8f4ec 0%,
+    rgba(248, 244, 236, 0.95) 10%,
+    rgba(248, 244, 236, 0.75) 20%,
+    rgba(248, 244, 236, 0.35) 36%,
+    rgba(248, 244, 236, 0.08) 54%,
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Subtle top tint for navbar readability */
+.safar-hero-photo-top-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background: linear-gradient(to bottom, rgba(248, 244, 236, 0.45) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Bottom vignette on image for destination overlay readability */
+.safar-hero-photo-bottom-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 46%;
+  background: linear-gradient(to top, rgba(16, 35, 28, 0.85) 0%, rgba(16, 35, 28, 0.3) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Floating Fair Fare Badge (Upper Right) */
+.safar-fare-badge-floating {
+  position: absolute;
+  top: 104px;
+  right: 48px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 99px;
+  color: #10231c;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 18px rgba(16, 35, 28, 0.08);
+  pointer-events: auto;
+}
+
+/* Destination Overlay sitting DIRECTLY ON TOP of the image */
+.safar-dest-overlay-direct {
+  position: absolute;
+  bottom: 38px;
+  right: 195px;
+  z-index: 20;
+  color: #ffffff;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: auto;
+  max-width: 380px;
+}
+
+.safar-dest-tag {
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffd899;
+}
+
+.safar-dest-title {
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.safar-dest-desc {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #eee7db;
+  line-height: 1.4;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.safar-dest-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.safar-dest-counter {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #eee7db;
+}
+
+.safar-circle-control-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.safar-circle-control-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.06);
+}
+
+/* ====================================================
+   LEFT HERO CONTENT
+   (Placed relative inside the same hero)
+   ==================================================== */
+.safar-hero-content-col {
+  position: relative;
+  z-index: 10;
+  width: 52%;
+  padding: 24px 0 38px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.safar-hero-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 650px;
+}
+
+.safar-eyebrow {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #576860;
+}
+
+.safar-headline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 4.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--safar-text);
+}
+
+.safar-orange-highlight {
+  color: var(--safar-orange);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.safar-supporting-copy {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--safar-text-muted);
+  max-width: 470px;
+}
+
+/* --- Search / AI Planner Card (Overlaps blend) --- */
+.safar-search-card-anchor {
+  width: 100%;
+}
+
+.safar-search-card {
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid var(--safar-neutral);
+  border-radius: 22px;
+  padding: 22px 24px;
+  box-shadow: 0 16px 40px rgba(16, 35, 28, 0.05);
+  max-width: 610px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.3s;
+}
+
+.safar-search-card:hover {
+  box-shadow: 0 20px 48px rgba(16, 35, 28, 0.08);
+}
+
+.safar-search-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--safar-neutral-light);
+  border: 1px solid var(--safar-neutral);
+  border-radius: 14px;
+  padding: 6px 6px 6px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.safar-search-input-row:focus-within {
+  border-color: var(--safar-orange);
+  box-shadow: 0 0 0 3px rgba(232, 91, 42, 0.12);
+  background: #ffffff;
+}
+
+.safar-search-input-row svg {
+  color: #7b8881;
+  flex-shrink: 0;
+}
+
+.safar-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--safar-text);
+  min-width: 0;
+}
+
+.safar-search-input::placeholder {
+  color: #9da9a2;
+}
+
+.safar-btn-ask {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--safar-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.safar-btn-ask:hover {
+  background: var(--safar-orange-hover);
+  transform: translateY(-1px);
+}
+
+.safar-search-divider {
+  height: 1px;
+  background: var(--safar-neutral);
+  margin: 0;
+}
+
+.safar-search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.safar-suggestion-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8c9790;
+  margin-right: 4px;
+}
+
+.safar-pill-btn {
+  background: var(--safar-neutral);
+  border: 1px solid #e2dbcc;
+  color: #4b5a52;
+  border-radius: 99px;
+  padding: 5px 13px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.safar-pill-btn:hover {
+  background: #e3dccf;
+  color: var(--safar-text);
+  border-color: #d1c8b8;
+}
+
+.safar-ai-response {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fdf5ec;
+  border: 1px solid #f6ded0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.safar-ai-response p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #48392c;
+  line-height: 1.4;
+}
+
+.safar-ai-response a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--safar-orange);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+  padding: 6px 12px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Four Compact Horizontal Benefits --- */
+.safar-benefits-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 14px;
+}
+
+.safar-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.safar-benefit-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--safar-neutral);
+  display: grid;
+  place-items: center;
+  color: var(--safar-text);
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(16, 35, 28, 0.04);
+}
+
+.safar-benefit-icon-circle svg {
+  width: 15px;
+  height: 15px;
+}
+
+.safar-benefit-text {
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--safar-text);
+  letter-spacing: -0.01em;
+}
+
+/* --- Lower Hero Label (Bottom-Left) --- */
+.safar-hero-bottom-label {
+  margin-top: 36px;
+  padding-left: 24px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #72827a;
+}
+
+/* --- Floating Assistant Button (Bottom-Right) --- */
+.safar-floating-assistant-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--safar-text);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 99px;
+  padding: 10px 18px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(16, 35, 28, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.safar-floating-assistant-btn:hover {
+  background: #091510;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(16, 35, 28, 0.3);
+}
+
+.safar-assistant-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--safar-orange);
+  box-shadow: 0 0 0 3px rgba(232, 91, 42, 0.35);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================================
+   RESPONSIVE COMPOSITION
+   ==================================================== */
+@media (max-width: 1100px) {
+  .safar-hero-content-col {
+    width: 56%;
+    padding-left: 32px;
+  }
+  .safar-hero-photo-layer {
+    width: 52%;
+  }
+  .safar-benefits-row {
+    flex-wrap: wrap;
+    gap: 16px 20px;
+  }
+  .safar-hero-nav {
+    padding: 0 32px;
+  }
+  .safar-dest-overlay-direct {
+    right: 140px;
+  }
+}
+
+@media (max-width: 900px) {
+  .safar-hero-body {
+    flex-direction: column;
+  }
+  .safar-hero-content-col {
+    width: 100%;
+    padding: 24px 24px 36px;
+  }
+  .safar-hero-photo-layer {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    order: 2;
+  }
+  .safar-hero-photo-cream-blend {
+    background: linear-gradient(
+      to bottom,
+      #f8f4ec 0%,
+      rgba(248, 244, 236, 0.4) 15%,
+      transparent 35%
+    );
+  }
+  .safar-nav-center {
+    display: none;
+  }
+  .safar-nav-mobile-toggle {
+    display: block;
+  }
+  .safar-nav-center.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
+    background: var(--safar-bg);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--safar-neutral);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    gap: 16px;
+    z-index: 50;
+  }
+  .safar-nav-tagline {
+    display: none;
+  }
+  .safar-dest-overlay-direct {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .safar-dest-controls {
+    justify-content: flex-start;
+  }
+  .safar-fare-badge-floating {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .safar-hero-nav {
+    padding: 0 16px;
+    height: 64px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .safar-nav-left {
+    gap: 8px;
+  }
+  .safar-nav-brand-name {
+    font-size: 1.15rem;
+  }
+  .safar-nav-right {
+    gap: 8px;
+  }
+  .safar-signin-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .safar-getstarted-btn {
+    display: none;
+  }
+  .safar-theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+  .safar-hero-content-col {
+    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .safar-headline {
+    font-size: clamp(1.85rem, 6.8vw, 2.4rem);
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .safar-supporting-copy {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .safar-search-card {
+    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 18px;
+  }
+  .safar-search-input-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  .safar-search-input {
+    font-size: 0.9rem;
+    min-width: 0;
+    width: 100%;
+  }
+  .safar-btn-ask {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 0.84rem;
+  }
+  .safar-search-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .safar-pill-btn {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+    white-space: normal;
+    text-align: left;
+  }
+  .safar-dest-title {
+    font-size: 1.4rem;
+  }
+  .safar-benefits-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .safar-hero-bottom-label {
+    padding-left: 0;
+    margin-top: 24px;
+    font-size: 0.68rem;
+  }
+  .safar-floating-assistant-btn {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 0.76rem;
+  }
 }
