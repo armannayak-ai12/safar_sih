@@ -1,3 +1,5 @@
+import SafarSafeView from "@/components/safar-safe-view";
+
 interface TripPageProps {
   params: Promise<{
     tripId: string;
@@ -7,11 +9,6 @@ interface TripPageProps {
 export default async function TripPage({ params }: TripPageProps) {
   const { tripId } = await params;
 
-  return (
-    <main>
-      <h1>Trip</h1>
-      <p>Trip ID: {tripId}</p>
-      <button>SOS</button>
-    </main>
-  );
+  return <SafarSafeView tripId={tripId} />;
 }
+
