@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import SafetyPhotoCapture from "./safety-photo-capture";
 import Link from "next/link";
 
 // ====================================================
@@ -316,6 +317,12 @@ Please contact me immediately.`;
               Deactivate SOS / I am safe
             </button>
           </div>
+
+          <SafetyPhotoCapture
+            onPhotoCaptured={(file) => {
+              console.log("Safety photo captured:", file);
+            }}
+          />
 
           {/* Alerting Contact Info */}
           <div className="p-4 rounded-2xl bg-white dark:bg-[#16281f] border border-red-200 dark:border-red-900 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
